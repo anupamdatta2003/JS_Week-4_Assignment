@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            margin-top: 125px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <div>
+        <span><button onclick="decrement()">-</button></span>
+        <span id="number">0</span>
+        <span><button onclick="increment()">+</button></span>
+    </div>
+
+
+    <script>
+        let count = document.getElementById("number")
+
+        function increment(){
+            count.innerHTML = Number(count.innerHTML) + 1
+        }
+        function decrement(){
+            if(Number(count.innerHTML)>0){
+                count.innerHTML = Number(count.innerHTML) - 1
+            }else{
+                alert("Counter is going beyond 0.")
+            }
+        }
+    </script>
+</body>
+</html>

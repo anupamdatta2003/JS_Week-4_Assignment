@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #image{
+            margin: 15px;
+            padding: 20px;
+        }
+        button{
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="message"></h1>
+    <button onclick="toggle()">Toggle Image</button>
+    <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" id="image" height="400px" width="400px"/>
+
+
+    <script>
+        let text = document.getElementById("message")
+        text.innerHTML = "Your Image is visible"
+
+        function toggle(){
+            let picture = document.getElementById("image")
+            if(picture.style.opacity == 0){
+                picture.style.opacity = 1
+                text.innerHTML = "Your Image is visible"
+            }else{
+                picture.style.opacity = 0
+                text.innerHTML = "Your Image is hidden"
+            }
+        }
+    </script>
+</body>
+</html>

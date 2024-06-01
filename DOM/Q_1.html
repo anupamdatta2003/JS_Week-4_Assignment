@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Profile Picture</h1>
+    <input type="file" id="file" onchange="changePicture()">
+    <h3>Your Profile Picture</h3>
+    <img src="" alt="No Profile Picture" id="image">
+
+    <script>
+        let filePicker = document.getElementById("file")
+        let image = document.getElementById("image")
+
+        function changePicture(){
+            let reader = new FileReader()
+
+            reader.onload = function(elem){
+                image.src = elem.target.result
+                image.style.maxHeight = "500px"
+                image.style.maxWidth = "500px"
+                
+            }
+
+            reader.readAsDataURL(filePicker.files[0])
+        }
+    </script>
+</body>
+</html>

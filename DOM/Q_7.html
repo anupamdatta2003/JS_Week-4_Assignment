@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input{
+            margin-top: 35px;
+            width: 200px;
+        }
+        li{
+            padding: 3px 7px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Search for items" id="filter">
+    <h3>Results:</h3>
+    <ul id="items">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>Tailwind CSS</li>
+        <li>GitHub</li>
+        <li>Git</li>
+        <li>Reactjs</li>
+        <li>Nextjs</li>
+        <li>MongoDB</li>
+        <li>MySQL</li>
+        <li>Nodejs</li>
+        <li>Angularjs</li>
+        <li>Vuejs</li>
+        <li>Django</li>
+        <li>Flask</li>
+        <li>Dart</li>
+        <li>Python</li>
+    </ul>
+
+
+    <script>
+        let filterInput = document.getElementById("filter")
+        let itemList = document.getElementById("items").getElementsByTagName("li")
+
+        filterInput.addEventListener("input",function(){
+            let filterValue = filterInput.value.toLowerCase()
+
+            for(let i=0; i<itemList.length; i++){
+                let itemText = itemList[i].innerText.toLowerCase()
+                if(itemText.includes(filterValue)){
+                    itemList[i].style.display = "block"
+                }else{
+                    itemList[i].style.display = "none"
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
